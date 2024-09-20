@@ -63,7 +63,10 @@ d3.json("dados_biologicos.json").then(function (data) {
     }
 
     function sanitizeSmiles(smiles) {
-        return smiles.replace(/[\\/*?:"<>|]/g, '_');
+        smiles = smiles.replace(/[\\*?:"<>|]/g, '_');
+        smiles = smiles.replace(/[\\/]/g, '-');
+        console.log(smiles)
+        return smiles;
     }
 
 
